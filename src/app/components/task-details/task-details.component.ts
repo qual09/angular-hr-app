@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
-import { tasks } from '../mock-tasks';
+import { tasks } from '../../mocks/mock-tasks';
 
 @Component({
   selector: 'app-task-details',
@@ -22,15 +22,15 @@ export class TaskDetailsComponent implements OnInit {
       this.processId = params.get('taskId'); //For Camunda
       this.task = tasks[+params.get('taskId')]; //For Mock
     });
-    if(!this.task){
+    if (!this.task) {
       this.getVariables();
     }
   }
 
   getVariables() {
     let url = 'http://localhost:8080/rest/task/' + this.processId + '/variables';
-    console.log('######### '+url);
-    this.http.get(url).subscribe(data =>{
+    console.log('######### ' + url);
+    this.http.get(url).subscribe(data => {
       this.variables = data;
     })
   }
@@ -55,7 +55,7 @@ export class TaskDetailsComponent implements OnInit {
   //   console.log('############## ' + this.variables);//QQQ
   // }
 
-  alert(){
+  alert() {
     alert('Edit not implemented! ' + this.processId);
   }
 

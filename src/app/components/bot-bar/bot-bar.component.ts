@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{ GlobalConstants } from '../global-contants';
+import { GlobalConstants } from '../../global-contants';
 
 @Component({
   selector: 'app-bot-bar',
