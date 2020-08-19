@@ -1,0 +1,61 @@
+<div *ngIf="task">
+
+<h1>{{ task.role }}</h1>
+
+<div class="containerBox">
+
+  <h4 style="float: right;"><strong>ID:</strong> {{task.id}} <button (click)="alert()">Edit</button></h4>
+
+  <div class="sections">
+    <div>
+      <strong>Line Manager:</strong> {{task.lineManager}}<br />
+      <strong>Position:</strong> {{task.position}}<br />
+      <strong>Salary:</strong> {{task.salary}}<br />
+      <strong>Location:</strong> {{task.location}}<br />
+    </div>
+    <div>
+      <span class="rowElement"><strong>Status: </strong>
+      <span *ngIf="task.status=='In Progress' || task.status=='Briefing'" class="statusInProgress">{{task.status}}</span>
+      <span *ngIf="task.status=='Rejected'" class="statusRejected">{{task.status}}<span class="warning">[Action Required]</span> </span>
+      <span *ngIf="task.status=='Completed'" class="statusCompleted">{{task.status}}</span>
+      </span><br />
+      <strong>Date Created:</strong> {{task.dateCreated}}<br />
+      <strong>Date Updated:</strong> {{task.dateUpdated}}<br />
+    </div>
+  </div>
+  <div class="sections">
+    <h1>Candidates</h1>
+  </div>
+
+</div>
+
+</div>
+
+<div *ngIf="!task">
+
+<h1>{{ variables.formData.value.briefingForm.openPosition }}</h1>
+
+<div class="containerBox">
+
+  <h4 style="float: right;"><strong>ID:</strong> {{ processId }}</h4>
+
+
+  <div class="sections">
+    <div>
+      <strong>Line Manager:</strong> {{ variables.formData.value.briefingForm.lineManager }}<br />
+      <strong>Position:</strong> {{ variables.formData.value.briefingForm.openPosition }}<br />
+      <strong>Salary:</strong> {{ variables.formData.value.briefingForm.minSalary }} - {{ variables.formData.value.briefingForm.maxSalary }}<br />
+      <strong>Location:</strong> {{ variables.formData.value.briefingForm.location[0] }}<br />
+    </div>
+    <div>
+      <span class="rowElement"><strong>Status: </strong> {{ variables.formData.value.status }}</span><br />
+      <strong>Date Created:</strong> {{ variables.formData.value.status }}<br />
+      <strong>Date Updated:</strong> {{ variables.formData.value.status }}<br />
+    </div>
+  </div>
+
+  <button (click)="alert()">Edit</button>
+
+</div>
+
+</div>

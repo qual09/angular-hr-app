@@ -1,0 +1,41 @@
+<div class="topbar">
+  <div class="logo">
+    <a [routerLink]="['/']"><img src="https://lingarogroup.com/wp-content/themes/lingaro/landing-page/img/lingaro-logo-dark.png" /></a>
+    <nav class="userMenuAlt">
+      <ul>
+        <li>
+          <button [routerLink]="['account']">Account</button>
+        </li>
+        <li>
+          <button [routerLink]="['login']" class="bgRed" style="margin: 0px;" (click)="logout()">Logout</button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="topMenu">
+    <nav class="mainMenu">
+      <ul>
+        <li>
+          <button class="bgPurple" [routerLink]="['newRecruitment']" (click)="new()">New</button>
+        </li>
+        <li>
+          <button [routerLink]="['dashboard']">Dashboard</button>
+        </li>
+        <li>
+          <button [routerLink]="['reports']">Reports</button>
+        </li>
+      </ul>
+    </nav>
+    <nav class="userMenu">
+      <ul>
+        <li>
+          <button [routerLink]="['account']">Account</button>
+        </li>
+        <li>
+          <button [routerLink]="['login']" class="bgRed" style="margin: 0px;" (click)="logout()">Logout</button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+</div>

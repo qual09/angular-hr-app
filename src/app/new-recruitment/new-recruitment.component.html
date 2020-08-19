@@ -1,0 +1,66 @@
+<h1>New Recruitment</h1>
+<div class="containerBox">
+  
+<form>
+
+<div class="sections">
+
+<div class="section">
+<h2>Candidate</h2>
+
+  <label for="role">Role:</label><br />
+  <input type="text" id="role" name="role" value=""><br /><br />
+  
+  <label for="position">Position:</label><br>
+  <select id="position" name="position">
+    <option value="Associate">Associate Consultant</option>
+    <option value="Consultant">Consultant</option>
+    <option value="Lead">Lead Consultant</option>
+  </select><br><br>
+
+  <label for="salary">Salary:</label><br>
+  <input type="text" id="salary" name="salary" value=""><br /><br />
+
+  <label for="location">Location:</label><br>
+  <input type="text" id="location" name="location" value=""><br /><br />
+
+  <label for="Manager">Line Manager:</label><br>
+  <input type="text" id="Manager" name="Manager" value="John Wick"><br /><br />
+
+</div>
+
+<div class="section">
+<h2>Project</h2>
+
+  <label for="pName">Project Name:</label><br />
+  <input type="text" id="pName" name="pName" value=""><br /><br />
+  
+  <label for="Duration">Project Duration:</label><br>
+  <input type="text" id="Duration" name="Duration" value=""><br /><br />
+
+  <label for="Project">Project Description:</label><br>
+  <textarea name="Project" rows="7" cols="23" placeholder="Minimum 4 sentences!"></textarea><br /><br />
+
+</div>
+
+<div class="section">
+<h2>Skills</h2>
+
+  <label for="Technical">Technical Skills:</label><br />
+  <input type="text" id="Technical" name="Technical" value=""><br /><br />
+  
+  <label for="Soft">Soft Skills:</label><br>
+  <input type="text" id="Soft" name="Soft" value=""><br /><br />
+
+  <label for="Languages">Languages:</label><br>
+  <input type="text" id="Languages" name="Languages" value="English, Polish"><br /><br />
+
+</div>
+
+</div>
+
+<button style="margin-right: 15px;" [routerLink]="['/']">Cancel</button>
+<button class="bgRed" (click)="create()" [routerLink]="['/']" type="submit">Create</button>
+
+</form>
+</div>

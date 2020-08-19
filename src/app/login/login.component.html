@@ -1,0 +1,18 @@
+<div class="containerBox loginLogo"><img src="https://lingarogroup.com/wp-content/themes/lingaro/landing-page/img/lingaro-logo-dark.png" />
+<h1>HR APP</h1>
+</div>
+<div class="containerBox">
+  <form id="my-form">
+    <div class="msg"></div>
+    <div>
+      <label for="Username">Username</label>
+      <input type="text" id="Username">
+    </div>
+    <div>
+      <label for="Password">Password</label>
+      <input type="password" id="Password">
+    </div>
+    <!-- <input [routerLink]="" class="button" type="submit" value="Submit"> -->
+  </form>
+  <button [routerLink]="['/']" class="button bgPurple" (click)="login()">Login</button>
+</div>

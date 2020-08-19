@@ -1,0 +1,19 @@
+.containerBox {
+  line-height: 1.5em;
+}
+.sections {
+  display: flex;
+  flex-wrap: wrap;
+}
+.sections > div {
+  margin: 0 3% 10px 0;
+  min-width: 300px;
+}
+.warning {
+  background-color: yellow;
+  color: red;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-left: 10px;
+  padding: 2px;
+}

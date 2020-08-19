@@ -1,0 +1,76 @@
+button {
+  margin-right: 20px;
+}
+
+.topbar {
+  border-top: none;
+  display: flex;
+  flex-direction: row;
+  height: 44px;
+  margin-bottom: 35px;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo a {
+  align-self: flex-start;
+  margin-right: 25px;
+}
+
+.logo .userMenuAlt {
+  display: none;
+}
+
+.topMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.topMenu nav ul {
+  display: flex;
+  flex-direction: row;
+}
+
+@media(max-width: 735px) {
+  button {
+    margin-right: 10px;
+  }
+  .logo a img {
+    width: 153px;
+  }
+  .topbar {
+    flex-direction: column;
+    height: 28px;
+    margin-bottom: 78px;
+    transition: all 0.3s ease;
+  }
+  .topMenu {
+    margin-top: 5px;
+    padding-bottom: 10px;
+    border-bottom: 2px black solid;
+    transition: all 0.3s ease;
+  }
+}
+
+@media(max-width: 470px) {
+  .logo a {
+    flex: 1;
+  }
+  .userMenu {
+    display: none;
+  }
+  .logo .userMenuAlt {
+    display: flex;
+  }
+  .logo .userMenuAlt ul {
+    display: flex;
+    flex-direction: row;
+  }
+}

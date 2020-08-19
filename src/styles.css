@@ -1,0 +1,121 @@
+/* CSS Reset */
+
+ul {
+  list-style: none;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Application styles */
+
+html, body {
+  background-color: #f2f2f2;
+  font-family: 'Maven Pro', Lato, sans-serif;
+  margin: 0px;
+}
+
+button, .button {
+  background-color: rgb(33, 118, 255);
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: white;
+  font-weight: bold;
+  height: 31px;
+  padding: 0px 12px;
+}
+
+button:hover, .button:hover {
+  border: 1px solid black;
+  cursor: pointer;
+  opacity: 0.8;
+  /* text-decoration: underline; */
+}
+
+button:focus {
+  outline: none;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0px 0px 15px 0px;
+}
+
+input, select, textarea {
+  border: 1px solid #BDBDBD;
+  border-radius: 4px;
+  font-size: 14px;
+  font-style: inherit;
+  padding: 8px;
+  resize: none;
+  width: 100%;
+  width: -webkit-fill-available;
+}
+
+.bgBlue {
+  background-color: royalblue;
+}
+
+.bgPurple {
+  background-color: purple;
+}
+
+.bgRed {
+  background-color: orangered;
+}
+
+.containerBox {
+  background-color: white;
+  border: 0px solid black;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  padding: 20px 30px;
+  width: 100%;
+}
+
+.mainRouter {
+  box-sizing: border-box;
+  clear: both;
+  display: block;
+  margin: 0px auto;
+  max-width: 1600px;
+  padding: 0px 15px;
+  width: 100%;
+}
+
+.statusCompleted, .statusInProgress, .statusRejected {
+  font-weight: bold;
+}
+
+.statusCompleted {
+  color: green;
+}
+
+.statusInProgress {
+  color: purple;
+}
+
+.statusRejected {
+  color: red;
+}
+
+.topbar, .botbar {
+  background-color: white;
+  /* background-color: #b9aeff; */
+  /* border-bottom: 1px solid black; */
+  /* border-top: 1px solid black; */
+  border: none;
+  box-shadow: 0 2px 10px -4px #555;
+  color: black;
+  padding: 10px 20px;
+  width: auto;
+}
+
+@media(max-width: 470px) {
+  .containerBox {
+    padding: 20px;
+  }
+}
