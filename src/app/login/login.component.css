@@ -2,20 +2,24 @@ button {
   height: 40px;
   width: 100%;
 }
+
 input, select, textarea {
   margin-top: 4px;
   margin-bottom: 15px;
 }
+
 input:hover, select:hover, textarea:hover {
   border: 1px black solid;
 }
+
 img, h1 {
   float: left;
 }
+
 h1 {
   font-size: 2.5em;
-
 }
+
 img {
   margin-right: 30px;
 }
@@ -24,9 +28,11 @@ img {
   margin: 40px auto;
   max-width: 500px;
 }
+
 .loginLogo {
   height: 82px;
 }
+
 .topbar, .botbar {
   display: none !important;
 }
