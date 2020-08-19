@@ -35,9 +35,9 @@ export class TaskListComponent implements OnInit {
 
   // Get list data
   getProcesses() {
-    this.http.get('http://localhost:8080/rest/task').subscribe(data => {
-      this.processes = data;
-    })
+    // this.http.get('http://localhost:8080/rest/task').subscribe(data => {
+    //   this.processes = data;
+    // });
   }
 
   ngOnDestroy() {
