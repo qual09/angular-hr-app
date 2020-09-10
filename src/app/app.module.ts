@@ -25,7 +25,7 @@ import { LoginComponent } from './components/login/login.component';
       { path: 'account', component: AccountComponent },
       { path: 'login', component: LoginComponent },
       { path: 'task/:taskId', component: TaskDetailsComponent },
-    ]),
+    ], { useHash: true }),
   ],
   declarations: [
     AppComponent, TopBarComponent, BotBarComponent, TaskListComponent, AccountComponent, ReportsComponent, NewRecruitmentComponent, TaskDetailsComponent, LoginComponent,
