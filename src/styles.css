@@ -1,5 +1,13 @@
 /* CSS Reset */
 
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
 ul {
   list-style: none;
 }
@@ -9,71 +17,301 @@ ul, li {
   padding: 0;
 }
 
+hr {
+  width: 100%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  /* width */
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  /* Track */
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  /* Handle */
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  /* Handle on hover */
+  background: #555;
+}
+
 /* Application styles */
 
 html, body {
   background-color: #f2f2f2;
-  font-family: 'Maven Pro', Lato, sans-serif;
+  font-family: 'Roboto', 'Maven Pro', 'Lato', 'sans-serif';
   margin: 0px;
 }
 
-button, .button {
-  background-color: rgb(33, 118, 255);
+a {
+  color: #466DB2;
+  transition: 0.3s ease;
+}
+
+a:hover, a:visited:hover {
+  color: orangered;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+a:visited {
+  color: #780091;
+}
+
+button {
+  background-color: #2e6da4;
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: 4px;
   color: white;
   font-weight: bold;
   height: 31px;
   padding: 0px 12px;
+  transition: 0.3s ease;
 }
 
-button:hover, .button:hover {
-  border: 1px solid black;
-  cursor: pointer;
+button:disabled {
+  background-color: #bbbbbb;
   opacity: 0.8;
-  /* text-decoration: underline; */
+}
+
+button:hover {
+  background-color: #1B3F5F;
+  border: 1px solid transparent;
+  box-shadow: 0 0 6px 2px lightgray;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:disabled:hover {
+  background-color: #bbbbbb;
+  box-shadow: none;
+  cursor: initial;
 }
 
 button:focus {
   outline: none;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2 {
   margin: 0px 0px 15px 0px;
 }
 
+h3, h4, h5 {
+  margin: 0px 0px 10px 0px;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Change chrome autocomplete color */
+
+fieldset:disabled input:-webkit-autofill {
+  box-shadow: 0 0 0 30px #eeeeee inset !important;
+  -webkit-box-shadow: 0 0 0 30px #eeeeee inset !important;
+}
+
+fieldset:disabled input::placeholder, fieldset:disabled textarea::placeholder {
+  visibility: hidden;
+}
+
 input, select, textarea {
+  /* background-color: white; */
   border: 1px solid #BDBDBD;
   border-radius: 4px;
   font-size: 14px;
   font-style: inherit;
-  padding: 8px;
+  min-width: 15px;
+  padding: 5px 6px;
   resize: none;
+  transition: 0.3s ease;
   width: 100%;
-  width: -webkit-fill-available;
+  /* width: -webkit-fill-available; */
+}
+
+input:hover, select:hover, textarea:hover {
+  border: 1px black solid;
+  box-shadow: 0 0 6px 2px lightgray;
+  transition: 0.3s ease;
+}
+
+input::placeholder, textarea::placeholder {
+  color: gray;
+  font-style: inherit;
+}
+
+fieldset:disabled input, fieldset:disabled select, fieldset:disabled textarea, input:disabled, select:disabled, textarea:disabled, input:disabled:hover, textarea:disabled:hover,
+/* select:disabled:hover, */
+
+/* affects editable as well... */
+
+input:read-only, textarea:read-only,
+/* select:read-only, */
+
+/* affects editable as well... */
+
+/* select:read-only:hover, */
+
+/* affects editable as well... */
+
+input:read-only:hover, textarea:read-only:hover {
+  background-color: #eeeeee !important;
+  border: 1px solid #bdbdbd;
+  box-shadow: none;
+  color: black;
+  cursor: initial;
+  opacity: 1;
+  outline: none;
+}
+
+input[type=checkbox] {
+  width: auto;
+}
+
+label {
+  font-size: 0.9em;
+}
+
+table {
+  border-collapse: collapse;
+  border: none;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  height: fit-content;
+  width: 100%;
+}
+
+thead tr:first-child {
+  border: none;
+  background-color: transparent !important;
+  border-bottom: 2px solid purple;
+  font-size: 1.05em;
+}
+
+tbody tr {
+  border-bottom: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+td, th {
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.tableMini td, .tableMini th {
+  padding: 3px 10px;
 }
 
 .bgBlue {
   background-color: royalblue;
 }
 
+.bgBlueLight {
+  background: rgb(20, 149, 209);
+}
+
 .bgPurple {
-  background-color: purple;
+  background-color: #9343b6;
+}
+
+.bgOrange {
+  background-color: #ec971f;
 }
 
 .bgRed {
-  background-color: orangered;
+  background: #D32F2F;
+}
+
+.bgGreen {
+  background: #449d44;
+}
+
+.bgWhite {
+  border: 1px solid gray;
+  background: white;
+  color: black;
 }
 
 .containerBox {
   background-color: white;
   border: 0px solid black;
-  border-radius: 3px;
+  border-radius: 4px;
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
   box-sizing: border-box;
+  line-height: 1.5em;
   margin-bottom: 12px;
   padding: 20px 30px;
   width: 100%;
+}
+
+.containerBox, .taskList {
+  animation: fadein 0.6s;
+}
+
+.copyImg {
+  height: 20px;
+  width: 20px;
+  opacity: 0.7;
+}
+
+.copyImg:hover {
+  opacity: 1;
+}
+
+.copyImg:active {
+  border: 2px solid transparent;
+  opacity: 1;
+}
+
+.errorTip {
+  color: red;
+  font-size: 1em;
+  font-style: italic;
+}
+
+.infoTip {
+  color: gray;
+  font-style: italic;
+}
+
+.grayText {
+  color: gray;
+}
+
+.invalidInput {
+  border: 1px solid red;
+  transition: 0.3s ease;
 }
 
 .mainRouter {
@@ -84,6 +322,18 @@ input, select, textarea {
   max-width: 1600px;
   padding: 0px 15px;
   width: 100%;
+}
+
+.sectionTitle {
+  display: flex !important;
+  align-items: center;
+  margin-bottom: 7px;
+}
+
+.sectionTitle img {
+  margin-right: 8px;
+  height: 28px;
+  width: 28px;
 }
 
 .statusCompleted, .statusInProgress, .statusRejected {
@@ -103,19 +353,105 @@ input, select, textarea {
 }
 
 .topbar, .botbar {
-  background-color: white;
   /* background-color: #b9aeff; */
-  /* border-bottom: 1px solid black; */
-  /* border-top: 1px solid black; */
   border: none;
+  background: white;
   box-shadow: 0 2px 10px -4px #555;
   color: black;
   padding: 10px 20px;
   width: auto;
 }
 
-@media(max-width: 470px) {
+.autoCols200 {
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.autoCols250 {
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.autoCols350 {
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+.twoCols {
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-gap: 5px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.threeCols {
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.warningBox {
+  background: #ffee58;
+  border: 2px dotted black;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.errorBox {
+  background: orange;
+  border: 2px dotted black;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.tooltip .tooltiptext {
+  background-color: transparent;
+  border-radius: 6px;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  transition: 0.3s ease;
+  visibility: hidden;
+  width: 120px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 115%;
+}
+
+.tooltip {
+  border-bottom: 1px dotted black;
+  display: inline-block;
+  position: relative;
+}
+
+.tooltip:hover .tooltiptext {
+  background-color: purple;
+  transition: 0.3s ease;
+  visibility: visible;
+}
+
+/* @media(max-width: 510px) {
   .containerBox {
     padding: 20px;
+  }
+} */
+
+/* animations */
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

@@ -13,6 +13,7 @@ import { ReportsComponent } from './components/reports/reports.component';
 import { NewRecruitmentComponent } from './components/new-recruitment/new-recruitment.component';
 import { TaskDetailsComponent } from './components/task-details/task-details.component';
 import { LoginComponent } from './components/login/login.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { LoginComponent } from './components/login/login.component';
       { path: 'login', component: LoginComponent },
       { path: 'task/:taskId', component: TaskDetailsComponent },
     ], { useHash: true }),
+    FontAwesomeModule,
   ],
   declarations: [
     AppComponent, TopBarComponent, BotBarComponent, TaskListComponent, AccountComponent, ReportsComponent, NewRecruitmentComponent, TaskDetailsComponent, LoginComponent,

@@ -1,14 +1,51 @@
 button {
-  margin-right: 20px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  color: black;
+  font-size: 1.1em;
+  height: 53px;
+}
+
+button:hover {
+  box-shadow: none;
+  border-bottom: 2px solid orangered;
+}
+
+.selected {
+  border-bottom: 2px solid orangered;
+}
+
+ul li>* {
+  margin-right: 0px;
+}
+
+.sectionTitle {
+  display: inline-flex !important;
+  margin-bottom: 0px;
+}
+
+.sectionTitle>span {
+  align-items: center;
+  display: flex;
+}
+
+.sectionTitle>span>img {
+  height: 25px;
+  width: 25px;
 }
 
 .topbar {
+  background-color: white;
   border-top: none;
+  border-bottom: 1px solid gray;
+  color: black;
   display: flex;
   flex-direction: row;
-  height: 44px;
-  margin-bottom: 35px;
-  transition: all 0.3s ease;
+  height: 63px;
+  margin-bottom: 30px;
+  transition: 0.3s ease;
 }
 
 .logo {
@@ -16,20 +53,16 @@ button {
   flex-direction: row;
 }
 
-.logo a {
+.logo img {
   align-self: flex-start;
-  margin-right: 25px;
-}
-
-.logo .userMenuAlt {
-  display: none;
+  margin-right: 35px;
+  width: 200px;
 }
 
 .topMenu {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 10px;
   width: 100%;
 }
 
@@ -38,39 +71,60 @@ button {
   flex-direction: row;
 }
 
-@media(max-width: 735px) {
-  button {
+@media(max-width: 1020px) {
+  ul li>* {
     margin-right: 10px;
   }
-  .logo a img {
+  .logo img {
     width: 153px;
+  }
+  .logo nav {
+    margin-left: auto;
   }
   .topbar {
     flex-direction: column;
-    height: 28px;
-    margin-bottom: 78px;
-    transition: all 0.3s ease;
+    height: 50px;
+    margin-bottom: 155px;
+    transition: 0.3s ease;
   }
   .topMenu {
-    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
     padding-bottom: 10px;
-    border-bottom: 2px black solid;
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
+  }
+  .userMenu {
+    display: flex;
+    margin-top: 10px;
   }
 }
 
-@media(max-width: 470px) {
-  .logo a {
-    flex: 1;
+@media(max-width: 520px) {
+  button {
+    background-color: lavender;
+    height: auto;
+    padding-top: 5px;
   }
-  .userMenu {
-    display: none;
+  .mainMenu, .userMenu {
+    width: 100%;
   }
-  .logo .userMenuAlt {
+  .mainMenu ul, .userMenu ul {
     display: flex;
+    flex-direction: column !important;
+    width: 100%;
   }
-  .logo .userMenuAlt ul {
-    display: flex;
-    flex-direction: row;
+  .mainMenu ul li>*, .userMenu ul li>* {
+    margin-bottom: 5px;
+    width: 100%;
+  }
+  .sectionTitle>span>img {
+    height: 20px;
+    width: 20px;
+  }
+  .topbar {
+    margin-bottom: 270px;
+  }
+  .topMenu {
+    margin-top: 5px;
   }
 }

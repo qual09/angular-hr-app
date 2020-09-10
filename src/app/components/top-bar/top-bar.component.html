@@ -1,40 +1,45 @@
 <div class="topbar">
   <div class="logo">
-    <a [routerLink]="['/']">
-      <!-- <img src="https://lingarogroup.com/wp-content/themes/lingaro/landing-page/img/lingaro-logo-dark.png" /> -->
-    </a>
-    <nav class="userMenuAlt">
-      <ul>
-        <li>
-          <button [routerLink]="['account']">Account</button>
-        </li>
-        <li>
-          <button [routerLink]="['login']" class="bgRed" style="margin: 0px;" (click)="logout()">Logout</button>
-        </li>
-      </ul>
-    </nav>
+    <!-- <a [routerLink]="['/']">
+      <img src="https://lingarogroup.com/wp-content/themes/lingaro/landing-page/img/lingaro-logo-dark.png" />
+    </a> -->
   </div>
   <div class="topMenu">
     <nav class="mainMenu">
       <ul>
         <li>
-          <button class="bgPurple" [routerLink]="['newRecruitment']" (click)="new()">New</button>
+          <button class="bgPurple" [routerLink]="['newRecruitment']" (click)="new()">
+            <fa-icon [icon]="faPlusCircle" [styles]="{'color': 'red'}"></fa-icon>
+            New
+          </button>
         </li>
         <li>
-          <button [routerLink]="['dashboard']">Dashboard</button>
+          <button [routerLink]="['dashboard']">
+            <fa-icon [icon]="faChartArea" [styles]="{'color': 'teal'}"></fa-icon>
+            Dashboard
+          </button>
         </li>
         <li>
-          <button [routerLink]="['reports']">Reports</button>
+          <button [routerLink]="['reports']">
+            <fa-icon [icon]="faChartLine" [styles]="{'color': 'teal'}"></fa-icon>
+            Reports
+          </button>
         </li>
       </ul>
     </nav>
     <nav class="userMenu">
       <ul>
         <li>
-          <button [routerLink]="['account']">Account</button>
+          <button [routerLink]="['account']">
+            <fa-icon [icon]="faUserLock" [styles]="{'color': 'teal'}"></fa-icon>
+            Account
+          </button>
         </li>
         <li>
-          <button [routerLink]="['login']" class="bgRed" style="margin: 0px;" (click)="logout()">Logout</button>
+          <button [routerLink]="['login']" class="bgRed" style="margin: 0px;" (click)="logout()">
+            <fa-icon [icon]="faLongArrowAltUp" [styles]="{'color': 'red'}"></fa-icon>
+            Logout
+          </button>
         </li>
       </ul>
     </nav>
