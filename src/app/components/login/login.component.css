@@ -12,12 +12,9 @@ input:hover, select:hover, textarea:hover {
   border: 1px black solid;
 }
 
-img, h1 {
-  float: left;
-}
-
 h1 {
   font-size: 2.5em;
+  margin: 0;
 }
 
 img {
@@ -30,7 +27,11 @@ img {
 }
 
 .loginLogo {
-  height: 82px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 0.2em;
+  margin: 10px 0;
 }
 
 .topbar, .botbar {

@@ -10,11 +10,11 @@ button {
 
 button:hover {
   box-shadow: none;
-  border-bottom: 2px solid orangered;
+  border-bottom: 2px solid purple;
 }
 
 .selected {
-  border-bottom: 2px solid orangered;
+  border-bottom: 2px solid purple;
 }
 
 ul li>* {
@@ -44,7 +44,7 @@ ul li>* {
   display: flex;
   flex-direction: row;
   height: 63px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   transition: 0.3s ease;
 }
 
