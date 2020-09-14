@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { AuthenticationService } from '../../services/authentication.service';
 import { GlobalConstants } from '../../global-contants';
 
 import {
@@ -25,17 +26,16 @@ export class TopBarComponent implements OnInit {
   faUserLock = faUserLock;
   faLongArrowAltUp = faLongArrowAltUp;
 
-  constructor(public router: Router) { }
+  constructor(
+    public router: Router,
+    private authenticationService: AuthenticationService,
+  ) { }
 
   ngOnInit() {
   }
 
   logout() {
-    //console.log('Logged Out!')
-  }
-
-  new() {
-    //console.log('New!')
+    this.authenticationService.logout();
   }
 
 }

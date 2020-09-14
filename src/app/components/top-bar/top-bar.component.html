@@ -1,14 +1,13 @@
 <div class="topbar">
 
   <div class="logo">
-    <h1>{{applicationName}}</h1>
+    <h1><a routerLink="/dashboard">{{applicationName}}</a></h1>
   </div>
 
   <nav class="mainMenu">
     <ul>
       <li>
-        <button [routerLink]="['newRecruitment']" (click)="new()"
-          [class.selected]="router.url.toLocaleLowerCase().includes('new')">
+        <button [routerLink]="['newRecruitment']" [class.selected]="router.url.toLocaleLowerCase().includes('new')">
           <fa-icon [icon]="faPlusCircle" [styles]="{'color': 'red'}"></fa-icon>
           New
         </button>

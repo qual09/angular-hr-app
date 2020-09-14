@@ -5,17 +5,17 @@
 </div>
 
 <div class="containerBox">
-  <form id="my-form">
+  <form>
     <div class="msg"></div>
     <div>
-      <label for="Username">Username</label>
-      <input type="text" id="Username">
+      <label>Username</label>
+      <input type="text" name="user" [(ngModel)]="account.id">
     </div>
     <div>
-      <label for="Password">Password</label>
-      <input type="password" id="Password">
+      <label>Password</label>
+      <input type="password" name="password" [(ngModel)]="account.password">
     </div>
     <!-- <input [routerLink]="" class="button" type="submit" value="Submit"> -->
   </form>
-  <button [routerLink]="['/']" class="bgRed" (click)="login()">Login</button>
+  <button class="bgRed" (click)="login()">Login</button>
 </div>
