@@ -1,9 +1,11 @@
 button {
   margin-right: 10px;
 }
+
 span {
   margin-bottom: 10px;
 }
+
 .section {
   display: inline-grid;
   margin: 0px 35px 15px 0px;

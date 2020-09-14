@@ -1,19 +1,111 @@
-.containerBox {
-  line-height: 1.5em;
+h1, h4 {
+  margin: 0;
 }
-.sections {
+
+h1 {
+  font-size: 1.7em;
+}
+
+h2, h3 {
+  margin-bottom: 5px;
+}
+
+.menuBottom button {
+  margin-right: 15px;
+}
+
+.detailsTop li span button {
+  margin: 0 0 5px 15px;
+}
+
+label {
+  display: block;
+}
+
+.detailsTop {
+  align-items: center;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.sections > div {
-  margin: 0 3% 10px 0;
-  min-width: 300px;
+
+.containerBox {
+  margin-top: 5px;
 }
-.warning {
-  background-color: yellow;
-  color: red;
-  font-size: 0.9em;
-  font-weight: bold;
-  margin-left: 10px;
-  padding: 2px;
+
+.sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 30px 40px;
+  margin-bottom: 10px;
+}
+
+.sections>div .sectionTitle {
+  margin-bottom: 10px;
+}
+
+/* Spacing between section element and subsections */
+
+.sections>div, .sections>div>div, .subsectionEdit, .cardList li {
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-gap: 5px;
+  /* grid-template-rows: 1fr; */
+  /* align-items: baseline; */
+}
+
+.subsections {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px !important;
+}
+
+.sectionTitle h2 {
+  margin-bottom: 0px;
+}
+
+.newElement {
+  background-color: rgb(205, 236, 255);
+}
+
+.cardList {
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-gap: 18px;
+}
+
+.cardList li {
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  padding: 10px;
+  transition: 0.3s ease;
+}
+
+fieldset:enabled .cardList li:hover {
+  border: 1px solid black;
+  box-shadow: 0 0 6px 2px lightgray;
+  transition: 0.3s ease;
+}
+
+@media(max-width: 900px) {
+  .detailsTop {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+@media(max-width: 520px) {
+  .detailsTop {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .detailsTop li>span {
+    display: flex;
+    flex-direction: column;
+  }
+  .detailsTop li span button {
+    margin: 0 0 5px 0;
+  }
+  .sections {
+    grid-gap: 10px;
+  }
 }
