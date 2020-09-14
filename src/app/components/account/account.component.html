@@ -1,34 +1,57 @@
-<h1>
-  <fa-icon [icon]="faUserLock" [styles]="{'color': 'teal'}"></fa-icon>
-  Account
-</h1>
+<ul class="detailsTop">
+  <li>
+    <div class="sectionTitle">
+      <h1>
+        <fa-icon [icon]="faUserLock" [styles]="{'color': 'teal'}"></fa-icon>
+        John Wick
+      </h1>
+    </div>
+  </li>
+  <li>
+    <span>
+      <button type="button" (click)="editMode()" *ngIf="readonlyMode">
+        Edit</button>
+      <button type="button" (click)="editMode()" *ngIf="!readonlyMode" class="bgRed">
+        Save</button>
+      <button type="button" (click)="editMode()" *ngIf="!readonlyMode">
+        Cancel</button>
+    </span>
+  </li>
+</ul>
+
 <div class="containerBox">
-  <h2>John Wick</h2>
-  <table>
-    <tr>
-      <td width="90px"><strong>Email</strong></td>
-      <td>john.wick@gmail.com</td>
-    </tr>
-    <tr>
-      <td><strong>Role</strong></td>
-      <td>Manager</td>
-    </tr>
-    <tr>
-      <td><strong>Team </strong></td>
-      <td>Data and Plattforms</td>
-    </tr>
-    <br />
-    <tr>
-      <td><strong>Login </strong></td>
-      <td>Neo2000</td>
-    </tr>
-    <tr>
-      <td><strong>Password </strong></td>
-      <td>*********</td>
-    </tr>
-  </table>
+  <form #personForm="ngForm" autocomplete="off">
+    <fieldset [disabled]="readonlyMode">
+      <div class="sections">
 
-  <br />
+        <div>
+          <h2>Info</h2>
+          <label>Name*
+            <input type="text" name="firstName" [(ngModel)]="account.firstName" #firstName="ngModel"
+              [ngClass]="{'invalidinput': firstName.errors && firstName.touched}">
+          </label>
+          <label>Surname*
+            <input type="text" name="lastName" [(ngModel)]="account.lastName" #lastName="ngModel"
+              [ngClass]="{'invalidinput': lastName.errors && lastName.touched}">
+          </label>
+          <label>Email
+            <input type="text" name="email" [(ngModel)]="account.email" #email="ngModel"
+              [ngClass]="{'invalidinput': email.errors && email.touched}">
+          </label>
+        </div>
 
-  <button (click)="alert()">Edit</button>
+        <div>
+          <h2>Account</h2>
+          <label>ID*
+            <input type="text" name="id" [(ngModel)]="account.id">
+          </label>
+          <label>Password*
+            <input type="password" name="password" [(ngModel)]="account.password" #password="ngModel"
+              [ngClass]="{'invalidinput': password.errors && password.touched}" required>
+          </label>
+        </div>
+
+      </div>
+    </fieldset>
+  </form>
 </div>

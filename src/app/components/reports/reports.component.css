@@ -3,11 +3,5 @@ button {
 }
 
 span {
-  margin-bottom: 10px;
-}
-
-.section {
-  display: inline-grid;
-  margin: 0px 35px 15px 0px;
-  min-width: 20%;
+  margin-bottom: 5px;
 }

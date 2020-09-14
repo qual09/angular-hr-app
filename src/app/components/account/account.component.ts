@@ -9,14 +9,29 @@ import { faUserLock } from '@fortawesome/free-solid-svg-icons';
 })
 export class AccountComponent implements OnInit {
   faUserLock = faUserLock;
+  readonlyMode: boolean = true;
+  account: {
+    id?: string;
+    firstName?: string;
+    lastName?: string;
+    email?: string;
+    password?: string;
+  };
 
   constructor() { }
 
   ngOnInit() {
+    this.account = {
+      id: 'johndoe',
+      firstName: 'John',
+      lastName: 'Doe',
+      email: 'jd@company.com',
+      password: 'jdoe',
+    }
   }
 
-  alert() {
-    alert('Edit not implemented!');
+  editMode() {
+    this.readonlyMode = !this.readonlyMode;
   }
 
 }

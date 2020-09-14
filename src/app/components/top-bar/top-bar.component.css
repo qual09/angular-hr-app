@@ -13,118 +13,57 @@ button:hover {
   border-bottom: 2px solid purple;
 }
 
-.selected {
-  border-bottom: 2px solid purple;
+h1 {
+  margin: 0;
+  white-space: nowrap;
 }
 
 ul li>* {
   margin-right: 0px;
 }
 
-.sectionTitle {
-  display: inline-flex !important;
-  margin-bottom: 0px;
+.selected {
+  border-bottom: 2px solid purple;
 }
 
-.sectionTitle>span {
+.topbar, .logo, .topbar nav ul {
   align-items: center;
   display: flex;
-}
-
-.sectionTitle>span>img {
-  height: 25px;
-  width: 25px;
+  flex-direction: row;
 }
 
 .topbar {
   background-color: white;
-  border-top: none;
   border-bottom: 1px solid gray;
-  color: black;
-  display: flex;
-  flex-direction: row;
-  height: 63px;
+  height: 55px;
   margin-bottom: 15px;
   transition: 0.3s ease;
-}
-
-.logo {
-  display: flex;
-  flex-direction: row;
-}
-
-.logo img {
-  align-self: flex-start;
-  margin-right: 35px;
-  width: 200px;
-}
-
-.topMenu {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
   width: 100%;
 }
 
-.topMenu nav ul {
-  display: flex;
-  flex-direction: row;
-}
-
-@media(max-width: 1020px) {
-  ul li>* {
-    margin-right: 10px;
-  }
-  .logo img {
-    width: 153px;
-  }
-  .logo nav {
-    margin-left: auto;
-  }
-  .topbar {
-    flex-direction: column;
-    height: 50px;
-    margin-bottom: 155px;
-    transition: 0.3s ease;
-  }
-  .topMenu {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 10px;
-    transition: 0.3s ease;
-  }
-  .userMenu {
-    display: flex;
-    margin-top: 10px;
-  }
-}
-
 @media(max-width: 520px) {
   button {
-    background-color: lavender;
+    background-color: #dddddd;
     height: auto;
     padding-top: 5px;
+    width: 100%;
+  }
+  .topbar, .mainMenu ul, .userMenu ul {
+    flex-direction: column !important;
+    width: 100%;
+  }
+  .topbar {
+    margin-bottom: 180px;
+  }
+  .logo {
+    margin-bottom: 20px;
   }
   .mainMenu, .userMenu {
     width: 100%;
   }
-  .mainMenu ul, .userMenu ul {
-    display: flex;
-    flex-direction: column !important;
-    width: 100%;
-  }
-  .mainMenu ul li>*, .userMenu ul li>* {
+  .mainMenu ul li, .userMenu ul li {
     margin-bottom: 5px;
     width: 100%;
-  }
-  .sectionTitle>span>img {
-    height: 20px;
-    width: 20px;
-  }
-  .topbar {
-    margin-bottom: 270px;
-  }
-  .topMenu {
-    margin-top: 5px;
   }
 }
