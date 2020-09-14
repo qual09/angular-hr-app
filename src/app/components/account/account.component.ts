@@ -22,11 +22,11 @@ export class AccountComponent implements OnInit {
 
   ngOnInit() {
     this.account = {
-      id: 'johndoe',
+      id: 'johnwick',
       firstName: 'John',
-      lastName: 'Doe',
-      email: 'jd@company.com',
-      password: 'jdoe',
+      lastName: 'Wick',
+      email: 'johnwick@company.com',
+      password: 'johnwick',
     }
   }
 

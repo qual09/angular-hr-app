@@ -6,11 +6,18 @@ button {
   color: black;
   font-size: 1.1em;
   height: 53px;
+  opacity: 0.6;
 }
 
 button:hover {
   box-shadow: none;
   border-bottom: 2px solid purple;
+  opacity: 1;
+}
+
+.selected {
+  border-bottom: 2px solid purple;
+  opacity: 1;
 }
 
 h1 {
@@ -20,10 +27,6 @@ h1 {
 
 ul li>* {
   margin-right: 0px;
-}
-
-.selected {
-  border-bottom: 2px solid purple;
 }
 
 .topbar, .logo, .topbar nav ul {

@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Task } from '../../models/task';
 
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-new-recruitment',
   templateUrl: './new-recruitment.component.html',
   styleUrls: ['../task-details/task-details.component.css', './new-recruitment.component.css']
 })
 export class NewRecruitmentComponent implements OnInit {
+  faPlusCircle = faPlusCircle;
   task: Task;
 
   constructor(
