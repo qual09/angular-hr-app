@@ -16,23 +16,20 @@ export class NewRecruitmentComponent implements OnInit {
 
   ngOnInit() {
     this.task = {
-      role: 'Java',
+
     }
   }
 
-  onSubmit(briefingData) {
-    console.warn('Recruitment created ', briefingData);
+  onSubmit(task: Task) {
+    console.warn('Recruitment created ', task);
   }
 
   create() {
     this.goBack();
   }
 
-
   goBack(): void {
     this.location.back();
   }
-
-
 
 }
