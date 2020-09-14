@@ -93,7 +93,6 @@ button {
 
 button:disabled {
   background-color: #bbbbbb;
-  opacity: 0.8;
 }
 
 button:hover {
@@ -181,7 +180,6 @@ input:read-only:hover, textarea:read-only:hover {
   box-shadow: none;
   color: black;
   cursor: initial;
-  opacity: 1;
   outline: none;
 }
 
@@ -274,21 +272,6 @@ td, th {
 
 .containerBox, .taskList {
   animation: fadein 0.6s;
-}
-
-.copyImg {
-  height: 20px;
-  width: 20px;
-  opacity: 0.7;
-}
-
-.copyImg:hover {
-  opacity: 1;
-}
-
-.copyImg:active {
-  border: 2px solid transparent;
-  opacity: 1;
 }
 
 .errorTip {

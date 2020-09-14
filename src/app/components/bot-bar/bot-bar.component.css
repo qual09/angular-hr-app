@@ -1,10 +1,7 @@
 .botbar {
+  color: #666666;
   font-size: 1em;
   margin-top: 20px;
   padding: 14px 0px;
   text-align: center;
-}
-
-.botbar small {
-  opacity: 90%;
 }
