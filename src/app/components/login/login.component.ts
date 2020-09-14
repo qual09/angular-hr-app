@@ -4,12 +4,15 @@ import { Router } from '@angular/router';
 import { User } from '../../models/user';
 import { AuthenticationService } from '../../services/authentication.service';
 
+import { faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  logo = faChalkboardTeacher;
   account: User;
 
   constructor(
