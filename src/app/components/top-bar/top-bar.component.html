@@ -1,17 +1,23 @@
 <div class="topbar">
 
-  <div class="logo">
+  <!-- <div class="logo">
     <h1><a routerLink="/dashboard">{{applicationName}}</a></h1>
-  </div>
+  </div> -->
 
   <nav class="mainMenu">
     <ul>
       <li>
-        <button [routerLink]="['newRecruitment']" [class.selected]="router.url.toLocaleLowerCase().includes('new')">
+        <button class="new" [routerLink]="['newRecruitment']"
+          [class.selected]="router.url.toLocaleLowerCase().includes('new')">
           <fa-icon [icon]="faPlusCircle" [styles]="{'color': 'red'}"></fa-icon>
           New
         </button>
       </li>
+    </ul>
+  </nav>
+
+  <nav class="mainMenu">
+    <ul>
       <li>
         <button [routerLink]="['dashboard']" [class.selected]="router.url.toLocaleLowerCase().includes('dashboard')">
           <fa-icon [icon]="faChartArea" [styles]="{'color': 'teal'}"></fa-icon>
@@ -27,7 +33,7 @@
     </ul>
   </nav>
 
-  <nav class="userMenu">
+  <nav class="mainMenu">
     <ul>
       <li>
         <button [routerLink]="['account']" [class.selected]="router.url.toLocaleLowerCase().includes('account')">

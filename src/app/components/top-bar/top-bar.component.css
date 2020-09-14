@@ -9,7 +9,8 @@ button {
   border-radius: 0;
   color: black;
   font-size: 1.1em;
-  height: 53px;
+  height: 43px;
+  margin-top: 10px;
   opacity: 0.6;
 }
 
@@ -49,28 +50,32 @@ ul li>* {
   width: 100%;
 }
 
-@media(max-width: 520px) {
+@media(max-width: 500px) {
   button {
     background-color: #dddddd;
     height: auto;
-    padding-top: 5px;
+    margin-top: 0px;
+    padding: 5px 0px 2px 0px;
     width: 100%;
   }
-  .topbar, .mainMenu ul, .userMenu ul {
+  .new {
+    background-color: transparent;
+    height: 45px;
+    margin-bottom: 10px;
+  }
+  .topbar, .mainMenu ul {
     flex-direction: column !important;
-    width: 100%;
   }
   .topbar {
-    margin-bottom: 180px;
+    margin-bottom: 165px;
   }
   .logo {
     margin-bottom: 20px;
   }
-  .mainMenu, .userMenu {
+  .mainMenu, .mainMenu ul, .mainMenu ul li {
     width: 100%;
   }
-  .mainMenu ul li, .userMenu ul li {
+  .mainMenu ul li {
     margin-bottom: 5px;
-    width: 100%;
   }
 }
