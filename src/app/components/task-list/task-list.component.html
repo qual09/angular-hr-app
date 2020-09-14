@@ -1,4 +1,13 @@
-<h1>Recruitments</h1>
+<ul class="detailsTop">
+  <li>
+    <div class="sectionTitle">
+      <h1>
+        <fa-icon [icon]="faChartArea" [styles]="{'color': 'teal'}"></fa-icon>
+        Recruitments
+      </h1>
+    </div>
+  </li>
+</ul>
 
 <div class="toolBox">
   <input name="filter" class="search" type="text" autocomplete="off" [(ngModel)]="searchTerm" (ngModelChange)="search()"
@@ -16,14 +25,6 @@
 </div>
 
 <div class="taskList">
-
-  <!-- Processes -->
-  <div *ngFor="let process of processes" [routerLink]="['/task', process.id]" class="containerBox"
-    style="display:block;">
-    <h2>{{process.name}}</h2>
-    <span><strong>Created: </strong> {{process.created | date}}</span>
-    <span><strong>ID: </strong> {{process.id}}</span>
-  </div>
 
   <!-- Tasks (MOCK) -->
   <ng-container *ngFor="let task of tasks; index as rowNum">

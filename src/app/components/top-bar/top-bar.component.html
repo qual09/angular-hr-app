@@ -1,25 +1,26 @@
 <div class="topbar">
 
   <div class="logo">
-    <h1>HR App</h1>
+    <h1>{{applicationName}}</h1>
   </div>
 
   <nav class="mainMenu">
     <ul>
       <li>
-        <button class="bgPurple" [routerLink]="['newRecruitment']" (click)="new()">
+        <button [routerLink]="['newRecruitment']" (click)="new()"
+          [class.selected]="router.url.toLocaleLowerCase().includes('new')">
           <fa-icon [icon]="faPlusCircle" [styles]="{'color': 'red'}"></fa-icon>
           New
         </button>
       </li>
       <li>
-        <button [routerLink]="['dashboard']">
+        <button [routerLink]="['dashboard']" [class.selected]="router.url.toLocaleLowerCase().includes('dashboard')">
           <fa-icon [icon]="faChartArea" [styles]="{'color': 'teal'}"></fa-icon>
           Dashboard
         </button>
       </li>
       <li>
-        <button [routerLink]="['reports']">
+        <button [routerLink]="['reports']" [class.selected]="router.url.toLocaleLowerCase().includes('reports')">
           <fa-icon [icon]="faChartLine" [styles]="{'color': 'teal'}"></fa-icon>
           Reports
         </button>
@@ -30,13 +31,13 @@
   <nav class="userMenu">
     <ul>
       <li>
-        <button [routerLink]="['account']">
+        <button [routerLink]="['account']" [class.selected]="router.url.toLocaleLowerCase().includes('account')">
           <fa-icon [icon]="faUserLock" [styles]="{'color': 'teal'}"></fa-icon>
           Account
         </button>
       </li>
       <li>
-        <button [routerLink]="['login']" class="bgRed" style="margin: 0px;" (click)="logout()">
+        <button [routerLink]="['login']" (click)="logout()">
           <fa-icon [icon]="faLongArrowAltUp" [styles]="{'color': 'red'}"></fa-icon>
           Logout
         </button>

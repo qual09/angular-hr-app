@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { GlobalConstants } from '../../global-contants';
 
 import {
   faPlusCircle,
@@ -14,14 +17,15 @@ import {
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent implements OnInit {
-  currentMenu: string;
+  applicationName = GlobalConstants.applicationName;
+
   faPlusCircle = faPlusCircle;
   faChartArea = faChartArea;
   faChartLine = faChartLine;
   faUserLock = faUserLock;
   faLongArrowAltUp = faLongArrowAltUp;
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
   }

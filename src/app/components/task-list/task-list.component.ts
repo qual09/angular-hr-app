@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 import { tasks } from '../../mocks/mock-tasks';
 
+import { faChartArea, } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
@@ -11,10 +13,10 @@ import { tasks } from '../../mocks/mock-tasks';
 export class TaskListComponent implements OnInit {
   tasks = tasks;
   taskFiltered = tasks;
-  processes;
-  searchTerm;
-  sortList;
-  interval;
+  searchTerm: string;
+  sortList: string;
+
+  faChartArea = faChartArea;
 
   constructor(private http: HttpClient) { }
 
@@ -24,24 +26,12 @@ export class TaskListComponent implements OnInit {
     this.tasks = this.tasks.sort(
       (a, b) => a.id < b.id ? 1 : a.id === b.id ? 0 : -1
     );
-
     this.getProcesses();
-    // this.interval = setInterval(() => { 
-    //     this.getProcesses(); 
-    // }, 5000);
-    //alert('yo');
-
   }
 
   // Get list data
   getProcesses() {
-    // this.http.get('http://localhost:8080/rest/task').subscribe(data => {
-    //   this.processes = data;
-    // });
-  }
 
-  ngOnDestroy() {
-    this.processes = null;
   }
 
   // Search box

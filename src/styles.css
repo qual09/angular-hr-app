@@ -322,8 +322,8 @@ td, th {
 }
 
 .sectionTitle {
-  display: flex !important;
   align-items: center;
+  display: flex;
   margin-bottom: 7px;
 }
 

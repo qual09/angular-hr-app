@@ -13,8 +13,8 @@ import { Task } from '../../models/task';
 })
 export class TaskDetailsComponent implements OnInit {
   readonlyMode: boolean = true;
-  task: Task;
   taskId: string;
+  task: Task;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,8 +23,8 @@ export class TaskDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.taskId = params.get('taskId'); //For Camunda
-      this.task = tasks[+params.get('taskId')]; //For Mock
+      this.taskId = params.get('taskId');
+      this.task = tasks[+this.taskId];
     });
 
   }
