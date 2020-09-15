@@ -1,7 +1,11 @@
 .botbar {
+  /* background-color: white; */
+  border: none;
+  /* box-shadow: 0 2px 10px -4px #555; */
   color: #666666;
   font-size: 1em;
   margin-top: 20px;
-  padding: 14px 0px;
-  text-align: center;
+  padding: 14px 20px;
+  text-align: right;
+  width: auto;
 }
