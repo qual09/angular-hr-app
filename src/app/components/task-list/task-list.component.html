@@ -12,34 +12,31 @@
 <div class="toolBox">
   <input name="filter" class="search" type="text" autocomplete="off" [(ngModel)]="searchTerm" (ngModelChange)="search()"
     placeholder="Type to Search" />
-
-  <span><strong>Sort by: </strong><input [(ngModel)]="sortList" (ngModelChange)="sort()" type="radio" id="id"
-      name="sort" value="id">
-    <label for="id">ID</label></span>
-  <span><input [(ngModel)]="sortList" (ngModelChange)="sort()" type="radio" id="role" name="sort" value="role">
-    <label for="role">Role</label></span>
-  <span><input [(ngModel)]="sortList" (ngModelChange)="sort()" type="radio" id="manager" name="sort" value="manager">
-    <label for="manager">Manager</label></span>
-  <span><input [(ngModel)]="sortList" (ngModelChange)="sort()" type="radio" id="status" name="sort" value="status">
-    <label for="status">Status</label></span>
+  <strong>Sort by: </strong>
+  <input (click)="sort('id')" type="radio" id="id" name="sort" value="id" checked="true">
+  <label for="id">ID</label>
+  <input (click)="sort('role')" type="radio" id="role" name="sort" value="role">
+  <label for="role">Role</label>
+  <input (click)="sort('manager')" type="radio" id="manager" name="sort" value="manager">
+  <label for="manager">Manager</label>
+  <input (click)="sort('status')" type="radio" id="status" name="sort" value="status">
+  <label for="status">Status</label>
 </div>
 
 <div class="taskList">
-
   <!-- Tasks (MOCK) -->
   <ng-container *ngFor="let task of tasks; index as rowNum">
     <div *ngIf="task.status!=='Hidden'" [routerLink]="['/task', rowNum]" class="containerBox" style="display:block;">
       <h5 style="float: right;">({{ rowNum+1 }}) <strong>ID:</strong> {{task.id}}</h5>
       <h2>{{ task.role }}</h2>
-      <span><strong>Line Manager: </strong> {{task.lineManager}}</span>
+      <span><strong>Manager: </strong> {{task.manager}}</span>
       <span><strong>Status: </strong>
         <span *ngIf="task.status=='In Progress' || task.status=='Briefing'"
           class="statusInProgress">{{task.status}}</span>
-        <span *ngIf="task.status=='Rejected'" class="statusRejected">{{task.status}} <span class="warning">[Action
+        <span *ngIf="task.status=='Rejected'" class="statusRejected">{{task.status}}<span class="warning">[Action
             Required]</span></span>
-        <span *ngIf="task.status=='Completed'" class="statusCompleted">{{task.status}} </span>
+        <span *ngIf="task.status=='Completed'" class="statusCompleted">{{task.status}}</span>
       </span>
     </div>
   </ng-container>
-
 </div>

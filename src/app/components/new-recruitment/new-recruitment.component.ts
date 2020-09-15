@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { Task } from '../../models/task';
-
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+
+import { Recruitment } from '../../models/recruitment';
 
 @Component({
   selector: 'app-new-recruitment',
@@ -11,20 +11,20 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 })
 export class NewRecruitmentComponent implements OnInit {
   faPlusCircle = faPlusCircle;
-  task: Task;
+  recruitment: Recruitment;
 
   constructor(
     private location: Location,
   ) { }
 
   ngOnInit() {
-    this.task = {
+    this.recruitment = {
 
     }
   }
 
-  onSubmit(task: Task) {
-    console.warn('Recruitment created ', task);
+  onSubmit(recruitment: Recruitment) {
+    console.log('Recruitment created ', recruitment);
   }
 
   create() {

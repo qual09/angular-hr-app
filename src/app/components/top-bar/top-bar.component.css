@@ -14,13 +14,7 @@ button {
   opacity: 0.8;
 }
 
-button:hover {
-  box-shadow: none;
-  border-bottom: 2px solid purple;
-  opacity: 1;
-}
-
-.selected {
+button:hover, .selected {
   border-bottom: 2px solid purple;
   opacity: 1;
 }

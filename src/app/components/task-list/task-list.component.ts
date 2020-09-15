@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { tasks } from '../../mocks/mock-tasks';
+import { Recruitment } from '../../models/recruitment';
+import { RECRUITMENTS } from '../../mocks/mock-recruitments';
 
 import { faChartArea, } from '@fortawesome/free-solid-svg-icons';
 
@@ -11,64 +12,41 @@ import { faChartArea, } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
-  tasks = tasks;
-  taskFiltered = tasks;
+  tasks: Recruitment[];
+  taskFiltered: Recruitment[];
   searchTerm: string;
-  sortList: string;
-
   faChartArea = faChartArea;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    // Default sort tasks
-    this.sortList = 'id';
-    this.tasks = this.tasks.sort(
-      (a, b) => a.id < b.id ? 1 : a.id === b.id ? 0 : -1
-    );
-    this.getProcesses();
-  }
-
-  // Get list data
-  getProcesses() {
-
+    this.tasks = RECRUITMENTS;
+    this.taskFiltered = RECRUITMENTS;
+    this.sort('id');
   }
 
   // Search box
   search(): void {
     let term = this.searchTerm;
     this.tasks = this.taskFiltered.filter(function (yo) {
-      let allProperties = yo.id + yo.lineManager + yo.location + yo.status + yo.position + yo.role;
+      let allProperties = yo.id + yo.role + yo.position + yo.manager + yo.location + yo.status;
       if (yo.status == 'Rejected') { allProperties += 'Action Required' };
       //return allProperties.toLowerCase().indexOf(term.toLowerCase()) >= 0;
       return allProperties.toLowerCase().includes(term.toLowerCase());
     });
-    console.warn(this.tasks);
-    console.warn(this.taskFiltered);
   }
 
   // Radio buttons sort
-  sort(): void {
-    let sort = this.sortList;
-    if (sort == 'id') {
-      this.tasks = this.tasks.sort(
-        (a, b) => a.id < b.id ? 1 : a.id === b.id ? 0 : -1
-      ); console.warn(this.tasks);
-    }
-    if (sort == 'role') {
-      this.tasks = this.tasks.sort(
-        (a, b) => a.role > b.role ? 1 : a.role === b.role ? 0 : -1
-      ); console.warn(this.tasks);
-    }
-    if (sort == 'manager') {
-      this.tasks = this.tasks.sort(
-        (a, b) => a.lineManager > b.lineManager ? 1 : a.lineManager === b.lineManager ? 0 : -1
-      ); console.warn(this.tasks);
-    }
-    if (sort == 'status') {
-      this.tasks = this.tasks.sort(
-        (a, b) => a.status > b.status ? 1 : a.status === b.status ? 0 : -1
-      ); console.warn(this.tasks);
-    }
+  sort(sortBy: string = 'id'): void {
+    this.tasks = this.tasks.sort(
+      (a, b) => {
+        if (sortBy == 'id') {
+          return (a[sortBy] < b[sortBy] ? 1 : a[sortBy] === b[sortBy] ? 0 : -1)
+        } else {
+          return (a[sortBy] > b[sortBy] ? 1 : a[sortBy] === b[sortBy] ? 0 : -1)
+        }
+      }
+    );
   }
+
 }

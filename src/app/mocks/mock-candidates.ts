@@ -1,4 +1,4 @@
-export const candidates = [
+export const CANDIDATES = [
   {
     id: 'C-1',
     dateCreated: '2020-05-01',

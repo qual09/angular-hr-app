@@ -41,8 +41,8 @@
             <label>Location:
               <input type="text" name="location" [ngModel]="task.location">
             </label>
-            <label>Line Manager:
-              <input [ngModel]="task.lineManager" type="text" name="manager" value="John Wick">
+            <label>Manager:
+              <input [ngModel]="task.manager" type="text" name="manager" value="John Wick">
             </label>
           </div>
 
@@ -78,7 +78,7 @@
     </form>
   </div>
 
-  <button (click)="goBack()">Back</button>
+  <button (click)="goBack()" [disabled]="!readonlyMode">Back</button>
 
 </div>
 

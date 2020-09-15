@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 
-import { tasks } from '../../mocks/mock-tasks';
-import { Task } from '../../models/task';
+import { Recruitment } from '../../models/recruitment';
+import { RECRUITMENTS } from '../../mocks/mock-recruitments';
 
 @Component({
   selector: 'app-task-details',
@@ -14,7 +14,7 @@ import { Task } from '../../models/task';
 export class TaskDetailsComponent implements OnInit {
   readonlyMode: boolean = true;
   taskId: string;
-  task: Task;
+  task: Recruitment;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,9 +24,8 @@ export class TaskDetailsComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.taskId = params.get('taskId');
-      this.task = tasks[+this.taskId];
+      this.task = RECRUITMENTS[+this.taskId];
     });
-
   }
 
   editMode() {
