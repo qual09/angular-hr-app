@@ -11,12 +11,10 @@ button {
   font-size: 1.1em;
   height: 43px;
   margin-top: 10px;
-  opacity: 0.8;
 }
 
 button:hover, .selected {
   border-bottom: 2px solid black;
-  opacity: 1;
 }
 
 h1 {
