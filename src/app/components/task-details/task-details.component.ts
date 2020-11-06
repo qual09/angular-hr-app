@@ -1,30 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
+import { RecruitmentService } from '../../services/recruitment.service';
 import { Recruitment } from '../../models/recruitment';
-import { RECRUITMENTS } from '../../mocks/mock-recruitments';
 
 @Component({
   selector: 'app-task-details',
   templateUrl: './task-details.component.html',
   styleUrls: ['./task-details.component.css']
 })
-export class TaskDetailsComponent implements OnInit {
+export class TaskDetailsComponent implements OnInit, OnDestroy {
   readonlyMode: boolean = true;
   taskId: string;
   task: Recruitment;
+  subscription: Subscription;
 
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    private http: HttpClient) { }
+    private recruitmentService: RecruitmentService,
+  ) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.taskId = params.get('taskId');
-      this.task = RECRUITMENTS[+this.taskId];
+      if (this.taskId) {
+        this.getRecruitment(this.taskId);
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+  getRecruitment(id: string) {
+    this.subscription = this.recruitmentService.getRecruitment(this.taskId).subscribe(result => {
+      if (result) {
+        this.task = result;
+      }
     });
   }
 

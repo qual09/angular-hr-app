@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 
+import { RecruitmentService } from '../../services/recruitment.service';
 import { Recruitment } from '../../models/recruitment';
-import { RECRUITMENTS } from '../../mocks/mock-recruitments';
 
 import { faChartArea, } from '@fortawesome/free-solid-svg-icons';
 
@@ -11,18 +11,36 @@ import { faChartArea, } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
-export class TaskListComponent implements OnInit {
+export class TaskListComponent implements OnInit, OnDestroy {
   tasks: Recruitment[];
   taskFiltered: Recruitment[];
   searchTerm: string;
   faChartArea = faChartArea;
+  subscription: Subscription;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private recruitmentService: RecruitmentService,
+  ) { }
 
   ngOnInit() {
-    this.tasks = RECRUITMENTS;
-    this.taskFiltered = RECRUITMENTS;
+    // Get data from service
+    this.getTaskList();
+
+    // Sort
     this.sort('id');
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+  getTaskList() {
+    this.subscription = this.recruitmentService.getRecruitmentList().subscribe(result => {
+      if (result) {
+        this.tasks = result;
+        this.taskFiltered = result;
+      }
+    });
   }
 
   // Search box

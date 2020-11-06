@@ -26,7 +26,7 @@
 <div class="taskList">
   <!-- Tasks (MOCK) -->
   <ng-container *ngFor="let task of tasks; index as rowNum">
-    <div *ngIf="task.status!=='Hidden'" [routerLink]="['/task', rowNum]" class="containerBox" style="display:block;">
+    <div *ngIf="task.status!=='Hidden'" [routerLink]="['/task', task.id]" class="containerBox" style="display:block;">
       <h5 style="float: right;">({{ rowNum+1 }}) <strong>ID:</strong> {{task.id}}</h5>
       <h2>{{ task.role }}</h2>
       <span><strong>Manager: </strong> {{task.manager}}</span>
