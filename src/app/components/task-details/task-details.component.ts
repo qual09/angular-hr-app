@@ -6,12 +6,15 @@ import { Subscription } from 'rxjs';
 import { RecruitmentService } from '../../services/recruitment.service';
 import { Recruitment } from '../../models/recruitment';
 
+import { faBriefcase, } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-task-details',
   templateUrl: './task-details.component.html',
   styleUrls: ['./task-details.component.css']
 })
 export class TaskDetailsComponent implements OnInit, OnDestroy {
+  recruitmentIcon = faBriefcase;
   readonlyMode: boolean = true;
   taskId: string;
   task: Recruitment;
