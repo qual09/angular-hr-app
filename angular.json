@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "hr-app": {
+    "angular-hr-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/hr-app",
+            "outputPath": "dist/angular-hr-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "hr-app:build"
+            "browserTarget": "angular-hr-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "hr-app:build:production"
+              "browserTarget": "angular-hr-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "hr-app:build"
+            "browserTarget": "angular-hr-app:build"
           }
         },
         "test": {
@@ -110,16 +110,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "hr-app:serve"
+            "devServerTarget": "angular-hr-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "hr-app:serve:production"
+              "devServerTarget": "angular-hr-app:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "hr-app"
+  "defaultProject": "angular-hr-app"
 }

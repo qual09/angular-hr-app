@@ -1,5 +1,5 @@
 {
-  "name": "hr-app",
+  "name": "angular-hr-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
