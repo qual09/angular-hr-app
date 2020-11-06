@@ -27,16 +27,16 @@ export class LoginComponent implements OnInit {
       password: 'demo',
       authdata: ''
     }
-
-    // (<HTMLElement>document.querySelector('.topbar')).style.display = 'none';
-    // (<HTMLElement>document.querySelector('.botbar')).style.display = 'none';
   }
 
   login() {
-    // (<HTMLElement>document.querySelector('.topbar')).style.display = 'flex';
-    // (<HTMLElement>document.querySelector('.botbar')).style.display = 'block';
-    this.authenticationService.login(this.account.id, this.account.password);
-    this.router.navigate(['/dashboard']);
+    this.authenticationService.login(this.account.id, this.account.password).subscribe(result => {
+      if (result.authdata) {
+        this.router.navigate(['/dashboard']);
+      } else {
+        alert('Something went wrong.');
+      }
+    });
   }
 
 }

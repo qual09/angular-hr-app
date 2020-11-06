@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, of } from 'rxjs';
 
 import { User } from '../models/user';
 
@@ -19,13 +19,16 @@ export class AuthenticationService {
     return this.currentUserSubject.value;
   }
 
-  login(username: string, password: string) {
+  login(username: string, password: string): Observable<User> {
+    // MOCK
     let user: User = {};
-    user.id = username;
-    user.authdata = window.btoa(username + ':' + password);
-    sessionStorage.setItem('currentUser', JSON.stringify(user));
-    this.currentUserSubject.next(user);
-    return user;
+    if (username === 'demo' && password === 'demo') {
+      user.id = username;
+      user.authdata = window.btoa(username + ':' + password);
+      sessionStorage.setItem('currentUser', JSON.stringify(user));
+      this.currentUserSubject.next(user);
+    }
+    return of(user);
   }
 
   logout() {
