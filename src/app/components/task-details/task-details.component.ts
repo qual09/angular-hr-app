@@ -40,15 +40,20 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
   }
 
   getRecruitment(id: string) {
-    this.subscription = this.recruitmentService.getRecruitment(this.taskId).subscribe(result => {
+    this.subscription = this.recruitmentService.getRecruitment(id).subscribe(result => {
       if (result) {
-        this.task = result;
+        this.task = JSON.parse(JSON.stringify(result));
       }
     });
   }
 
   editMode() {
     this.readonlyMode = !this.readonlyMode;
+  }
+
+  cancelEdit() {
+    this.getRecruitment(this.taskId);
+    this.editMode();
   }
 
   goBack(): void {
