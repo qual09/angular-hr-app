@@ -13,7 +13,7 @@
       <span>
         <button type="button" (click)="editMode()" *ngIf="readonlyMode">
           Edit</button>
-        <button type="button" (click)="editMode()" *ngIf="!readonlyMode" class="bgRed">
+        <button type="button" (click)="saveEdit()" *ngIf="!readonlyMode" class="bgRed">
           Save</button>
         <button type="button" (click)="cancelEdit()" *ngIf="!readonlyMode">
           Cancel</button>

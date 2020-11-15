@@ -18,6 +18,7 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
   readonlyMode: boolean = true;
   taskId: string;
   task: Recruitment;
+  taskCopy: Recruitment;
   subscription: Subscription;
 
   constructor(
@@ -49,11 +50,17 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
 
   editMode() {
     this.readonlyMode = !this.readonlyMode;
+    this.taskCopy = JSON.parse(JSON.stringify(this.task));
   }
 
   cancelEdit() {
-    this.getRecruitment(this.taskId);
-    this.editMode();
+    this.task = this.taskCopy;
+    this.taskCopy = {};
+    this.readonlyMode = !this.readonlyMode;
+  }
+
+  saveEdit() {
+    this.readonlyMode = !this.readonlyMode;
   }
 
   goBack(): void {
