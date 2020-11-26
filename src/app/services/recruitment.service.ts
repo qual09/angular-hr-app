@@ -44,7 +44,7 @@ export class RecruitmentService {
     const recruitment = RECRUITMENTS.filter((recruitment) => recruitment.id === id);
     return of(recruitment[0]);
 
-    const url = 'localhost:8080/recruitments';
+    const url = `localhost:8080/recruitments/${id}`;
     return this.http.get<Recruitment>(url).pipe(
       tap(() => console.log('### getRecruitment ### getRecruitment')),
       catchError(this.handleError<Recruitment>('getRecruitment'))
