@@ -121,5 +121,8 @@
       }
     }
   },
-  "defaultProject": "angular-hr-app"
+  "defaultProject": "angular-hr-app",
+  "cli": {
+    "analytics": false
+  }
 }
